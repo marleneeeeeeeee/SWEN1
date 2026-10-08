@@ -1,8 +1,10 @@
-import java.sql.Timestamp;
-import java.util.Date;
+package domain;
 
-public class Rating {
-    private int id;
+import java.sql.Timestamp;
+import java.util.UUID;
+
+public class Rating implements Entity{
+    private UUID id;
     private MediaEntry entry;
     private int creatorId;
     private int stars;
@@ -21,6 +23,11 @@ public class Rating {
     }
     public void like(){
         likes++;
+    }
+
+    @Override
+    public UUID getId() {
+        return id;
     }
 }
 

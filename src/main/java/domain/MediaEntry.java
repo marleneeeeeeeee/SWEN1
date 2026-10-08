@@ -1,10 +1,12 @@
+package domain;
+
 import lombok.Getter;
 import lombok.Setter;
 
 import java.rmi.server.UID;
 import java.util.List;
 
-public class MediaEntry {
+public class MediaEntry implements Entity {
     private UID id;
     @Getter
     @Setter
@@ -19,6 +21,9 @@ public class MediaEntry {
     @Setter
     private List<GENRE> genre;
 
-
+    @Override
+    public UID getId() {
+        return id;
+    }
 }
 
